@@ -3,7 +3,6 @@
 TaskFlow is a clean, modern, and interactive To-Do List Single Page Application (SPA). Designed to help users manage their daily tasks effortlessly with a seamless user experience, smooth UI transitions, and local data persistence.
 
 ## 🔗 Live Demo
-*(Coming Soon - Will be deployed to Vercel)* 
 > **https://azrielnaufal-dev.github.io/TaskFlow/**
 
 ## 📸 Screenshot
