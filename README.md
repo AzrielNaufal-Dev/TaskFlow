@@ -20,7 +20,7 @@ TaskFlow is a clean, modern, and interactive To-Do List Single Page Application 
 ## 🛠️ Tech Stack
 This project was built from scratch without relying on heavy UI libraries, focusing on core React principles and custom CSS.
 
-- **Framework:** [React.js](https://react.dev/) (via Vite)
+- **Framework:** ![React.js](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 - **Styling:** Vanilla CSS (CSS Modules & CSS Variables)
 - **State Management:** React Hooks (`useState`, `useEffect`)
 
