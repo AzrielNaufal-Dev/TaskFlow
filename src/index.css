@@ -1,0 +1,150 @@
+:root {
+  /* Brand */
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+
+  /* Background */
+  --color-background: #F8FAFC;
+  --color-surface: #ffffff;
+
+  /* Text */
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
+
+  /* Border */
+  --color-border: #E2E8F0;
+
+  /* Status */
+  --color-danger: #DC2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.container{
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  margin-block: 10%;
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.head-container {font-size: 1rem; padding: 12px;}
+
+main {padding: 0 14px;}
+
+.input-field{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+}
+
+input {
+  flex: 2;
+  height: 2.2em;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 7px 10px;
+  font-size: 1.3em;
+} input:focus {
+  border-color: var(--color-primary-hover);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.add-btn{
+  height: 1.8em;
+  width: 1.8em;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: var(--color-surface);
+
+  background-color: var(--color-primary);
+  transition:  0.4s ease-in-out;
+  cursor: pointer;
+} .add-btn:hover{
+  background-color: var(--color-primary-hover);
+} .add-btn:disabled{
+  background-color: var(--color-text-muted);
+  color: #c6c6c6;
+  cursor: auto;
+}
+
+.task-list-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: 9px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  cursor: pointer;
+
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+} 
+
+ul li span {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.edit-mode input {
+  width: 300px;
+  font-size: 1.2em;
+}
+
+.done{
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+  background-color: var(--color-border);
+  border-radius: 9px;
+}
+
+.edit-btn, .delete-btn, .save-btn {
+  border: none;
+  background-color: transparent;
+  padding: 9px 10px;
+  font-size: 1em;
+  cursor: pointer;
+}.edit-btn:hover, .delete-btn:hover, .save-btn:hover{
+  transform: translateY(-2px);
+}.save-btn:disabled{
+  cursor: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: var(--color-text-muted);
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted );
+}
