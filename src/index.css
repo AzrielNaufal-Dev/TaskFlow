@@ -91,6 +91,7 @@ input {
   list-style: none;
   margin: 0;
   padding: 0;
+  animation: task-list-in 0.3s ease-out;
 }
 
 ul li {
@@ -155,6 +156,9 @@ footer {
   height: 200px;
   margin: auto;
   display: flex;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  animation: empty-state-in 0.35s ease-out forwards;
 }
 
 .container-available p{
@@ -163,4 +167,30 @@ footer {
   font-size: 1.3em;
   font-style: italic;
   font-weight: bold;
+}
+
+@keyframes empty-state-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes task-list-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container-available,
+  .task-list-container {
+    animation: none;
+  }
 }
