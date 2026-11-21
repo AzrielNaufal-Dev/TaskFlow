@@ -148,3 +148,19 @@ footer {
   cursor: pointer;
   color: var(--color-text-muted );
 }
+
+.container-available{
+  max-width: 200px;
+  width: 100%;
+  height: 200px;
+  margin: auto;
+  display: flex;
+}
+
+.container-available p{
+  margin: auto;
+  color: var(--color-text-muted);
+  font-size: 1.3em;
+  font-style: italic;
+  font-weight: bold;
+}
