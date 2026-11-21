@@ -7,13 +7,21 @@ import { useEffect } from "react";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
-    const saved = localStorage.getItem("tasks")
-    return saved ? JSON.parse(saved) : []
+    const saved = localStorage.getItem("tasks");
+
+    if (!saved) return [];
+
+    try {
+      return JSON.parse(saved);
+    } catch {
+      localStorage.removeItem("tasks");
+      return [];
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks)), [tasks]
-  })
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   const remainingTasks = tasks.filter((task) => !task.done).length;
 
   function addTask(newTask) {
@@ -62,12 +70,18 @@ function App() {
       <main>
         <TaskForm onAddTask={addTask} />
 
-        <TaskList
-          tasks={tasks}
-          onDeleteTask={deleteTask}
-          onUpdate={editTask}
-          onToggleDone={toggleDone}
-        />
+        {tasks.length === 0 ? (
+          <div className="container-available">
+            <p>Data Not Available</p>
+          </div>
+        ) : (
+          <TaskList
+            tasks={tasks}
+            onDeleteTask={deleteTask}
+            onUpdate={editTask}
+            onToggleDone={toggleDone}
+          />
+        )}
       </main>
 
       <footer>
